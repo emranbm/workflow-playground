@@ -9,3 +9,4 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
       - run: docker info
+      - run: docker-compose --version
