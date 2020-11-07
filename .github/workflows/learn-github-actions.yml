@@ -1,14 +1,10 @@
 name: learn-github-actions
+env:
+  SS: 'ss'
 on: [push]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo "AA=aa-$GITHUB_RUN_ID" >> $GITHUB_ENV
-      - run: df -h
-      - run: echo $AA
-  next-job:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo $GITHUB_RUN_ID
+      - run: echo $SS
