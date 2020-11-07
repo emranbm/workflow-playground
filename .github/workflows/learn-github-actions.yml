@@ -3,11 +3,13 @@ on: [push]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
+    env:
+      AA: aa-${{ env.GITHUB_RUN_ID }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - run: df -h
-      - run: echo ${{ secrets.MY_SECRET }}
+      - run: echo $AA
 #      - run: npm install -g bats
 #      - run: bats -v
 #      - run: docker info
