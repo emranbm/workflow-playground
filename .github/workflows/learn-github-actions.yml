@@ -1,7 +1,10 @@
 name: learn-github-actions
 env:
   SS: 'ss'
-on: [push]
+on: 
+  push:
+    branches:
+      - master
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
