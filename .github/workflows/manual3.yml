@@ -1,0 +1,19 @@
+---
+name: "Manual Workflow"
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      a:
+        required: true
+        default: ${{ secrets.SAMPLE_SECRET }}
+jobs:
+  setup-infra:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo ${{ github.event.inputs.logLevel }}
+      - run: echo ${{ github.event.inputs.a }} | cut -d ' ' -f 1
