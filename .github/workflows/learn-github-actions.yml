@@ -10,5 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo test > a.txt
+      - run: echo test2 > a.txt
       - run: cat a.txt
